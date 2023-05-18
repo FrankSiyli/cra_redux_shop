@@ -1,8 +1,8 @@
-import { useGetPokemonByNameQuery } from "./redux/apis/pokemonApi";
-
+import { useGetAllProductsQuery } from "./redux/apis/productsApi";
 
 function App() {
-  const { data, error, isLoading } = useGetPokemonByNameQuery('bulbasaur')
+  const { data: products, error, isLoading } = useGetAllProductsQuery();
+  console.log(products);
 
   return (
     <div className="App">
@@ -10,10 +10,11 @@ function App() {
         <>Oh no, there was an error</>
       ) : isLoading ? (
         <>Loading...</>
-      ) : data ? (
+      ) : products ? (
         <>
-          <h3>{data.species.name}</h3>
-          <img src={data.sprites.front_shiny} alt={data.species.name} />
+          {products?.map((product) => (
+            <p key={product.id}>{product.title}</p>
+          ))}
         </>
       ) : null}
     </div>

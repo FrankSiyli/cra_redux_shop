@@ -1,11 +1,17 @@
-import CategoryButtons from "./components/categoryButtons/CategoryButtons";
-import Products from "./components/products/Products";
+import { Routes, Route } from "react-router-dom";
+import Home from "./components/home/Home";
+import Cart from "./components/cart/Cart";
+import Header from "./components/header/Header";
 
 function App() {
   return (
     <div className="App">
-      <CategoryButtons />
-      <Products />
+      <Header />
+
+      <Routes>
+        <Route index path="/" element={<Home />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
     </div>
   );
 }

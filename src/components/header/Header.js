@@ -9,7 +9,8 @@ const Header = () => {
     <>
       <h1> home-page</h1>
       <Link to="/">Home</Link>
-      <Link to="/cart">Cart {products.length}</Link>
+      <br />
+      <Link to="/cart">Cart ({products.length})</Link>
       <hr />
     </>
   );

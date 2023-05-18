@@ -12,22 +12,18 @@ const CategoryButtons = () => {
       categoryNames.push(product.category);
     }
   });
-  console.log(categoryNames);
+
   return (
     <>
-      <button onClick={() => dispatch(setCategory("all"))}>all</button>
-      <button onClick={() => dispatch(setCategory("men's clothing"))}>
-        "men's clothing"
-      </button>
-      <button onClick={() => dispatch(setCategory("jewelery"))}>
-        "jewelery"
-      </button>
-      <button onClick={() => dispatch(setCategory("electronics"))}>
-        "electronics"
-      </button>
-      <button onClick={() => dispatch(setCategory("women's clothing"))}>
-        "women's clothing"
-      </button>
+      <button onClick={() => dispatch(setCategory("all"))}>ALL</button>
+      {categoryNames?.map((categoryName) => (
+        <button
+          key={categoryName}
+          onClick={() => dispatch(setCategory(categoryName))}
+        >
+          {categoryName.toUpperCase()}
+        </button>
+      ))}
     </>
   );
 };

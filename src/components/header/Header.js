@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const Header = () => {
-  const products = useSelector((state) => state.product);
+  const products = useSelector((state) => state.products);
 
   return (
     <>

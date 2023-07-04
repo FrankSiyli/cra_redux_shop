@@ -25,18 +25,41 @@ const Users = () => {
 
   return (
     <>
-      <h4>{username}</h4>
-      <input
-        type="text"
-        value={newUsername}
-        onChange={(e) => setNewUsername(e.target.value)}
-        required
-      />
-      <button onClick={handleLogin} disabled={!isLoggedOut}>
-        Login
-      </button>
-      <button onClick={handleLogout}>Logout</button>
-      <hr />
+      <section className="d-flex justify-content-center  ">
+        <div className="input-group">
+          {username ? (
+            <div className="d-flex justify-content-center  ">
+              <h5 className="m-2 text-dark-emphasis">Hello "{username}" </h5>
+              <button
+                type="button"
+                className="btn btn-danger btn-sm "
+                onClick={handleLogout}
+              >
+                Logout
+              </button>
+            </div>
+          ) : (
+            <>
+              <input
+                type="text"
+                aria-label="name"
+                value={newUsername}
+                className="form-control"
+                onChange={(e) => setNewUsername(e.target.value)}
+                placeholder="Please enter your name"
+              />
+              <button
+                type="button"
+                className="btn btn-primary btn-sm"
+                onClick={handleLogin}
+                disabled={!isLoggedOut}
+              >
+                Login
+              </button>
+            </>
+          )}
+        </div>
+      </section>
     </>
   );
 };

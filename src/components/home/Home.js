@@ -1,14 +1,14 @@
-import React from 'react'
-import CategoryButtons from '../categoryButtons/CategoryButtons'
-import Products from '../products/Products'
+import React from "react";
+import CategoryButtons from "../categoryButtons/CategoryButtons";
+import Products from "../products/Products";
 
 const Home = () => {
   return (
     <>
-    <CategoryButtons />
+      <CategoryButtons />
       <Products />
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

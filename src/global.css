@@ -1,0 +1,19 @@
+body {
+  min-height: 100vh;
+  background-color: #4158d0;
+  background-image: linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
+}
+
+.card {
+  border: solid 3px #ffcc70;
+}
+
+.card-body {
+  overflow: hidden;
+  line-clamp: 3;
+}

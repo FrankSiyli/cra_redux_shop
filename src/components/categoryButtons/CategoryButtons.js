@@ -15,15 +15,33 @@ const CategoryButtons = () => {
 
   return (
     <>
-      <button onClick={() => dispatch(setCategory("all"))}>ALL</button>
-      {categoryNames?.map((categoryName) => (
+      <div className="dropdown m-5 ">
         <button
-          key={categoryName}
-          onClick={() => dispatch(setCategory(categoryName))}
+          className="btn btn-primary dropdown-toggle mt-5"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
         >
-          {categoryName.toUpperCase()}
+          Product Category
         </button>
-      ))}
+        <ul className="dropdown-menu m-3 ">
+          <button
+            className="btn btn-primary sm m-1"
+            onClick={() => dispatch(setCategory("all"))}
+          >
+            ALL
+          </button>
+          {categoryNames?.map((categoryName) => (
+            <button
+              className="btn btn-primary sm m-1"
+              key={categoryName}
+              onClick={() => dispatch(setCategory(categoryName))}
+            >
+              {categoryName.toUpperCase()}
+            </button>
+          ))}
+        </ul>
+      </div>
     </>
   );
 };

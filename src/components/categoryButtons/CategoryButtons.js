@@ -15,9 +15,10 @@ const CategoryButtons = () => {
 
   return (
     <>
-      <div className="dropdown m-5 ">
+      <div className="dropdown m-3 ">
         <button
-          className="btn btn-primary dropdown-toggle mt-5"
+          style={{ marginTop: "7rem" }}
+          className="btn btn-primary dropdown-toggle "
           type="button"
           data-bs-toggle="dropdown"
           aria-expanded="false"

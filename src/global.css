@@ -1,4 +1,5 @@
 body {
+  overflow-x: hidden;
   min-height: 100vh;
   background-color: #4158d0;
   background-image: linear-gradient(

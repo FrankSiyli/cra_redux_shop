@@ -20,14 +20,14 @@ const Products = () => {
       )}
       {isLoading && <h3 className="text-white text-center">Loading...</h3>}
       {products && (
-        <div className="row row-cols-1 row-cols-md-3 row-cols-xl-5 g-4">
+        <div className="row row-cols-1 row-cols-md-3 row-cols-xl-5 g-4 ">
           {filteredProducts.map((product) => (
-            <div key={product.id} className="col mb-4">
+            <div key={product.id} className="col ">
               <div
                 style={{
                   height: "400px",
                 }}
-                className="card bg-base-100 shadow-xl text-center m-3"
+                className="card bg-base-100 shadow-xl text-center m-3 border-2 "
               >
                 <figure>
                   <img

@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 const Header = () => {
   const products = useSelector((state) => state.products);
 
+  const totalPrice = products.reduce((acc, product) => acc + product.price, 0);
+
   return (
     <>
       <nav
@@ -28,31 +30,18 @@ const Header = () => {
             <Users />
           </div>
           <div>
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon"></span>
-            </button>
             <div
-              className="collapse navbar-collapse"
-              id="navbarSupportedContent"
+              style={{ borderRadius: "5px" }}
+              className="border border-primary"
             >
-              <ul className="navbar-nav me-auto "></ul>
-              <form className="d-flex">
-                <Link to="/cart" className="btn btn-outline-dark">
-                  <i className="bi-cart-fill me-1"></i>
-                  Cart
-                  <span className="badge bg-dark text-white ms-1 rounded-pill">
-                    {products.length}
-                  </span>
-                </Link>
-              </form>
+              <Link to="/cart" style={{ textDecoration: "none" }} className="">
+                <span class="row p-1 pb-0 ">
+                  <div style={{ textDecoration: "underline" }} className="col ">
+                    Cart
+                  </div>
+                  <p className="col text-black "> {totalPrice.toFixed(2)}€</p>
+                </span>
+              </Link>
             </div>
           </div>
         </div>

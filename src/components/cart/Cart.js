@@ -7,17 +7,21 @@ import { useDispatch } from "react-redux";
 const Cart = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products);
-  const totalPrice = products.reduce((acc, product) => acc + product.price, 0);
   return (
     <>
       <div className="row row-cols-1 row-cols-md-3 row-cols-xl-5 g-4 m-5">
+        {products.length === 0 && (
+          <h3 style={{ marginTop: "100px" }} className="mx-auto text-white">
+            Your cart is empty
+          </h3>
+        )}
         {products?.map((product) => (
           <div key={uid()} className="col mb-4">
             <div
               style={{
                 height: "400px",
               }}
-              className="card bg-base-100 shadow-xl text-center m-3"
+              className="card bg-base-100 shadow-xl text-center m-3 border-2"
             >
               <figure>
                 <img
@@ -46,10 +50,6 @@ const Cart = () => {
             </div>
           </div>
         ))}
-        <div style={{ marginTop: "25vh" }} className="text-white text-center">
-          {products.length === 0 && <h3>Cart is empty</h3>}
-          {<h3>Total Price: {totalPrice.toFixed(2)}€</h3>}
-        </div>
       </div>
     </>
   );
